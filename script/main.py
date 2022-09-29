@@ -177,7 +177,7 @@ class S3Control:
                     "Загружен файл {}".format(bucket_dir_name + "/" + file_name)
                 )
 
-    def upload_data_in_bucket(self, bucket_dir_name, path_to_dir):
+    def upload_data_in_bucket(self, bucket_dir_name: str, path_to_dir: str) -> None:
         for file_name in os.listdir(path_to_dir):
             file = path_to_dir + "/" + file_name
             if not os.path.isdir(file):
@@ -223,13 +223,3 @@ class S3Control:
 
 if __name__ == "__main__":
     s3 = S3Control()
-    # s3.get_files_from_bucket_dirs('test')
-    # s3.get_files_from_bucket_dir('test')
-    # s3.get_all_files_in_bucket()
-    # s3.delete_all_files_in_dir('test')
-    # s3.delete_files_without_dirs('test/beta/gamma')
-    # s3.del_files_from_bucket_with_algorithm('test/alpha')
-    # s3.upload_data_in_bucket('files', '../files')
-    # s3.recursion_upload_data_in_bucket('test', '../files')
-    # s3.upload_data_in_bucket('test', '../files')
-    # s3.recursion_upload_data_in_bucket('test', '../files')
